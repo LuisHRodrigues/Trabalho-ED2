@@ -1,3 +1,5 @@
+package Trabalho_ED2;
+
 public class Item {
 
     // Atributo que armazena o valor ligado ao objeto Item

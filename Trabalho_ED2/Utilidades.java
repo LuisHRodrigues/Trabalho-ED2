@@ -1,3 +1,5 @@
+package Trabalho_ED2;
+
 import java.util.Random;
 
 public class Utilidades {

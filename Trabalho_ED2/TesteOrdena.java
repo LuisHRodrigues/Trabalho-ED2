@@ -1,3 +1,5 @@
+package Trabalho_ED2;
+
 public class TesteOrdena {
     public static void main(String[] args) {
         int execucoes = 100;

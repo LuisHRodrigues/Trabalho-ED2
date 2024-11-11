@@ -1,3 +1,5 @@
+package Trabalho_ED2;
+
 public class Ordena {
     // Metodo de ordenação
     public static void selectionSort(Item v[]) {
