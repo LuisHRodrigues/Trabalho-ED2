@@ -21,15 +21,15 @@ public class TesteOrdena {
     public static void medirTempo(Item[][] dataset, int execucoes) {
         // Repete sobre cada vetor de Item no dataset
         for (int y = 0; y <= 2; y++) {
-            if (y == 0) {
+            
+        	if (y == 0) {
                 System.out.println("=== Bubble sort ===");
                 for (Item[] vetor : dataset) {
                     // Inicializa a variável que vai acumular o tempo total de execução
                     long somaTempo = 0;
 
                     for (int i = 0; i < execucoes; i++) {
-                        // Cria uma cópia do vetor para garantir que o mesmo vetor seja usado em cada
-                        // execução
+                        // Cria uma cópia do vetor para garantir que o mesmo vetor seja usado em cada execução
 
                         Item[] vetorCopia = copiarVetor(vetor);
 
@@ -39,8 +39,7 @@ public class TesteOrdena {
 
                         long tempoExecucao = tempFim - tempInicio;
 
-                        // Acumula o tempo de execução em uma variável que armazena a soma total dos
-                        // tempos
+                        // Acumula o tempo de execução em uma variável que armazena a soma total dos tempos
 
                         somaTempo += tempoExecucao;
                     }
@@ -68,13 +67,13 @@ public class TesteOrdena {
                 }
             }
             if (y == 2) {
-                System.out.println("=== Selection sort ===");
+                System.out.println("=== Quick sort ===");
                 for (Item[] vetor : dataset) {
                     long somaTempo = 0;
                     for (int i = 0; i < execucoes; i++) {
                         Item[] vetorCopia = copiarVetor(vetor);
                         long tempInicio = System.nanoTime();
-                        Ordena.selectionSort(vetorCopia);
+                        Ordena.quicksort(vetorCopia);
                         long tempFim = System.nanoTime();
                         long tempoExecucao = tempFim - tempInicio;
 
@@ -87,7 +86,7 @@ public class TesteOrdena {
             }
         }
     }
-
+   
     public static Item[] copiarVetor(Item[] vetorOriginal) {
         // Cria um novo vetor com o mesmo comprimento do vetor original
         Item[] copia = new Item[vetorOriginal.length];
@@ -95,11 +94,11 @@ public class TesteOrdena {
         // Itera sobre cada elemento do vetor original
         for (int i = 0; i < vetorOriginal.length; i++) {
 
-            // Cria um novo objeto Item para cada elemento do vetor original e copia o valor
-            // do Item original para o novo Item
+            // Cria um novo objeto Item para cada elemento do vetor original e copia o valor do Item original para o novo Item
             copia[i] = new Item(vetorOriginal[i].getValor());
         }
         // Retorna a cópia do vetor
         return copia;
-    }
+    }   
 }
+
