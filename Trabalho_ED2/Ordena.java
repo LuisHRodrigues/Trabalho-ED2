@@ -2,19 +2,39 @@ package Trabalho_ED2;
 
 public class Ordena {
     // Metodo de ordenação
-    public static void selectionSort(Item v[]) {
-        for (int i = 0; i < v.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < v.length; j++) {
-                if (v[j].getValor() < v[min].getValor()) {
-                    min = j;
-                }
-            }
-            Item aux = v[min];
-            v[min] = v[i];
-            v[i] = aux;
-        }
-    }
+   public static void quicksort(Item V[]){
+		ordena(V, 0, V.length-1);
+	}
+	// ********************************************
+	private static void ordena(Item[] vetor, int inicio, int fim) {
+		if (inicio < fim) {
+			int posicaoPivo = particao(vetor, inicio, fim);
+			ordena(vetor, inicio, posicaoPivo - 1);
+			ordena(vetor, posicaoPivo + 1, fim);
+		}
+	}
+	public static int particao(Item[] vetor, int inicio, int fim){
+		Item pivo = vetor[inicio];
+		int i = inicio + 1;
+		int j = fim;
+		while (i <= j) {
+			if (vetor[i].getValor() <= pivo.getValor())
+				i++;
+			else if (pivo.getValor() < vetor[j].getValor())
+				j--;
+			else {
+				Item troca = vetor[i];
+				vetor[i] = vetor[j];
+				vetor[j] = troca;
+				i++;
+				j--;
+			}
+		}
+		vetor[inicio] = vetor[j];
+		vetor[j] = pivo;
+		return j;
+	}
+
 
     public static void bubbleSort(Item v[]) {
         for (int k = v.length; k >= 1; k--) {
