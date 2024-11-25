@@ -23,7 +23,7 @@ public class TesteOrdena {
         for (int y = 0; y <= 2; y++) {
             
         	if (y == 0) {
-                System.out.println("=== Bubble sort ===");
+                System.out.println("=== Heap sort ===");
                 for (Item[] vetor : dataset) {
                     // Inicializa a variável que vai acumular o tempo total de execução
                     long somaTempo = 0;
@@ -34,7 +34,7 @@ public class TesteOrdena {
                         Item[] vetorCopia = copiarVetor(vetor);
 
                         long tempInicio = System.nanoTime(); // Captura o tempo inicial
-                        Ordena.bubbleSort(vetorCopia);
+                        Ordena.heapSort(vetorCopia, y);
                         long tempFim = System.nanoTime(); // Captura o tempo final
 
                         long tempoExecucao = tempFim - tempInicio;
@@ -101,4 +101,3 @@ public class TesteOrdena {
         return copia;
     }   
 }
-
