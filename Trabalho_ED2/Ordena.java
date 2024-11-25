@@ -1,8 +1,9 @@
 package Trabalho_ED2;
 
 public class Ordena {
-    // Metodo de ordenação
-   public static void quicksort(Item V[]){
+	//Metodo de ordenação
+
+	public static void quicksort(Item V[]){
 		ordena(V, 0, V.length-1);
 	}
 	// ********************************************
@@ -35,32 +36,57 @@ public class Ordena {
 		return j;
 	}
 
+	public static void heapRefaz(Item v[], int esq, int dir) {
+		int i= esq;
+		int j= i*2 + 1;
+		Item aux = v[i];
+		while(j<=dir) {
+			if(j< dir && v[j].getValor()< v[j+1].getValor())
+				j++;
+			if(aux.getValor() >= v[j].getValor())
+				break;
+			v[i]= v[j];
+			i=j;
+			j= i*2+1;
+		}
+		v[i]= aux;
+	}
+	public static void heapConstroi(Item v[], int n) {
+		int esq; 
+		esq= (n/2)-1;
+		while (esq >= 0) { 
+			heapRefaz(v, esq, n-1); 
+			esq--; 
+			} 
+		}
+	public static void heapSort(Item v[], int n) { 
+		Item aux; 
+		heapConstroi(v, n); 
+		while (n > 1) { 
+			aux = v[n-1]; 
+			v[n-1] = v[0]; 
+			v[0] = aux; 
+			n--; 
+			heapRefaz(v, 0, n-1); // refaz o heap } }
+		}
+	}
 
-    public static void bubbleSort(Item v[]) {
-        for (int k = v.length; k >= 1; k--) {
-            for (int j = 1; j < k; j++) {
-                if (v[j - 1].getValor() > v[j].getValor())
-                    troca(v, j, j - 1);
-            }
-        }
-    }
 
-    public static void troca(Item v[], int m, int n) {
-        Item aux = v[m];
-        v[m] = v[n];
-        v[n] = aux;
-    }
 
-    public static void insertionSort(Item v[]) {
-        int j = 0;
-        for (int i = 1; i < v.length; i++) { // laco externo divide o vetor
-            Item aux = v[i];
-            j = i;
-            while (j > 0 && aux.getValor() <= v[j - 1].getValor()) { // Faça ate encontrar o menor elemento
-                v[j] = v[j - 1]; // troca a posição com o de índice anterior
-                j--; // volte uma posição no índice
-            } // fim do while
-            v[j] = aux; // insere o elemento em aux na posição j
-        }
-    }
+	public static void insertionSort(Item v[]) {
+		int j = 0;
+		for (int i = 1; i < v.length; i++) { //laco externo divide o vetor
+			Item aux = v[i];
+			j = i;
+			while (j > 0 && aux.getValor() <= v[j - 1].getValor()) { // Faça ate encontrar o menor elemento
+				v[j] = v[j - 1]; // troca a posição com o de índice anterior
+				j--; // volte uma posição no índice
+			} // fim do while
+			v[j] = aux; // insere o elemento em aux na posição j
+		}
+	}
+
+
 }
+
+
