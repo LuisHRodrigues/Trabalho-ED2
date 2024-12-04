@@ -1,4 +1,12 @@
-package Trabalho_ED2;
+package trabalho2_ED2;
+
+/*
+Discentes: Laila Bianca, Luís Henrique, Marcus Luan
+Data de codificação: 16/12/2024
+Nome da disciplina: Estrutura de dados II
+
+Objetivo da classe: Reunião de algoritmos de ordenação para sua aplicação em "TesteOrdena"
+ */
 
 public class Ordena {
 	//Metodo de ordenação
@@ -61,6 +69,12 @@ public class Ordena {
 		}
 	public static void heapSort(Item v[], int n) { 
 		Item aux; 
+		/*
+		System.out.print("\n Antes: ");
+		for(int i=0; i< v.length; i++) {
+			System.out.print(v[i].getValor() + " - ");
+		}
+		*/
 		heapConstroi(v, n); 
 		while (n > 1) { 
 			aux = v[n-1]; 
@@ -69,6 +83,12 @@ public class Ordena {
 			n--; 
 			heapRefaz(v, 0, n-1); // refaz o heap } }
 		}
+		/*
+		System.out.print("\n Depois: ");
+		for(int i=0; i< v.length; i++) {
+			System.out.print(v[i].getValor() + " - ");
+		}
+		*/
 	}
 
 
