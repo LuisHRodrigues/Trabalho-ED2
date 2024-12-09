@@ -28,9 +28,8 @@ public class TesteOrdena {
     public static void medirTempo(Item[][] dataset, int execucoes) {
         // Repete sobre cada vetor de Item no dataset
         for (int y = 0; y <= 2; y++) {
-            int[] tamanhos = { 10, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
-            // int[] tamanhos = { 1000, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000,
-            // 9000, 10000 };
+            // int[] tamanhos = { 10, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+            int[] tamanhos = { 1000, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 };
 
             if (y == 0) {
                 System.out.println("=== Heap sort ===");

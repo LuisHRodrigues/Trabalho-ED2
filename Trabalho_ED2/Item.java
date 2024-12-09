@@ -1,7 +1,7 @@
 package Trabalho_ED2;
 /*
 Discentes: Laila Bianca, Luís Henrique, Marcus luis
-Data de codificação: 16/12/2024
+Data de codificação: 07/12/2024
 Nome da disciplina: Estrutura de dados II
 
 Objetivo da classe: Resgatar valores para serem usados como argumento em outras classes
